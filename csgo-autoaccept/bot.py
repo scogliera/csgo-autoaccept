@@ -19,25 +19,25 @@ def click(x, y):
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
 
 def findCSGO():
-	for x in range(hotbar_x_area[0], hotbar_x_area[1], 15):
-		win32api.SetCursorPos((x,1062))
-		if pyautogui.pixel(x, 1062)[0] > 160 and pyautogui.pixel(x, 1062)[1] > 100 and pyautogui.pixel(x, 1062)[2] < 100:
-			click(x, 1062)
-			return True
+	win32api.SetCursorPos((960,1080))
+	time.sleep(0.5)
+	try:
+		click(pyautogui.locateOnScreen('csgo.png').left, pyautogui.locateOnScreen('csgo.png').top)
+		return True
+	except:
+		return False
 
 def main():
 	found = findCSGO()
 	if found:
 		while(True):
-			for y in range(area[0], area[1], 25):
-				for x in range(hotbar_x_area[0], hotbar_x_area[1], 50):
-					win32api.SetCursorPos((x,y))
-
-					if keyboard.is_pressed('q'):
+			if keyboard.is_pressed('q'):
 						return
-					
-					if pyautogui.pixel(x, y)[0] < 40 and pyautogui.pixel(x, y)[1] > 80 and pyautogui.pixel(x, y)[2] < 100:
-						click(x, y)
-						return
+			
+			if(pyautogui.locateOnScreen('accept.png') != None):
+				click(pyautogui.locateOnScreen('accept.png').left, pyautogui.locateOnScreen('accept.png').top)
+				return
+				
+			print(pyautogui.locateOnScreen('accept.png'))
 	
 main()
