@@ -9,9 +9,6 @@ import win32api, win32con
 #X: 1128 Y: 1062 RGB: (210, 139,  49)
 #X: 958 Y: 476 RGB: (90, 203, 94)
 
-hotbar_x_area = (500, 1500)
-area = (400, 800)
-
 def click(x, y):
 	win32api.SetCursorPos((x,y))
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
@@ -32,12 +29,12 @@ def main():
 	if found:
 		while(True):
 			if keyboard.is_pressed('q'):
-						return
+				return
 			
 			if(pyautogui.locateOnScreen('accept.png') != None):
 				click(pyautogui.locateOnScreen('accept.png').left, pyautogui.locateOnScreen('accept.png').top)
 				return
-				
+
 			print(pyautogui.locateOnScreen('accept.png'))
 	
 main()
