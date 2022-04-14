@@ -3,3 +3,4 @@ keyboard
 pyautogui
 opencv-python
 pillow
+opencv-python
