@@ -10,7 +10,7 @@
   </div>
 	</h1>
 	<h4>A simple script that looks for the Accept button and clicks on it when found</h4>
-<br><br><br>
+<br><br>
 </div>
 
 ## Notes
