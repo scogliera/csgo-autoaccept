@@ -55,6 +55,8 @@
 1. Locate your python installation folder. By default in: **C:\Users\user\AppData\Local\Programs\Python\Python310\python.exe**
 2. In the cmd window opened up earlier, type:
 ```C:\Users\user\AppData\Local\Programs\Python\Python310\python.exe -m venv .venv```
+* Enter the venv by entering: 
+```.venv\Scripts\activate.bat```
 * Download the required dependencies by entering: 
 ```pip install -r requirements.txt```
 * After that, you're set up! Start the bot by using the ```python bot.py``` command!
