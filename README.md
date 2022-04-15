@@ -2,7 +2,7 @@
 	<h1>
 		<br>
 		<a href="https://github.com/scogliera/csgo-autoaccept/">
-			<img src="images/github/banner.png" alt="csgo-autoaccept">
+			<img src="images/banner.png" alt="csgo-autoaccept">
 		</a>
 		</br>
   <div>
