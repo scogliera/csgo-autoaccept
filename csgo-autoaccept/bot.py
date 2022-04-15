@@ -8,17 +8,12 @@ import win32api, win32con
 import math
 import winsound
 
-#X: 1128 Y: 1062 RGB: (210, 139,  49)
-#X: 958 Y: 476 RGB: (90, 203, 94)
 
 def click(x, y):
 	win32api.SetCursorPos((x,y))
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
 	time.sleep(0.01)
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
-
-def openCSGO():
-	pass
 
 
 def findCSGO():
@@ -31,7 +26,7 @@ def findCSGO():
 		regionWidth = pyautogui.size().width
 		regionHeight = math.floor(pyautogui.size().height/5)
 
-		click(pyautogui.locateOnScreen('pictures/csgo.png', region=(regionLeft, regionTop, regionWidth, regionHeight), grayscale=True, confidence=0.8).left, pyautogui.locateOnScreen('pictures/csgo.png', region=(regionLeft, regionTop, regionWidth, regionHeight), grayscale=True, confidence=0.8).top)
+		click(pyautogui.locateOnScreen('images/csgo.png', region=(regionLeft, regionTop, regionWidth, regionHeight), grayscale=True, confidence=0.8).left, pyautogui.locateOnScreen('images/csgo.png', region=(regionLeft, regionTop, regionWidth, regionHeight), grayscale=True, confidence=0.8).top)
 		return True
 	except:
 		return False	
@@ -50,9 +45,9 @@ def main():
 		regionWidth = math.floor(pyautogui.size().width/2)
 		regionHeight = pyautogui.size().height
 		centerRegion = (regionLeft, regionTop, regionWidth, regionHeight)
-		print("Script started...\n")
-		print("Q | Quit")
-		print("U | AutoAccept\n")
+		print("\nBinds\n > Q | Quit")
+		print(" > U | AutoAccept\n\n")
+		print("  Logs  \n---------")
 
 		while(True):
 			if keyboard.is_pressed('q'):
@@ -76,9 +71,11 @@ def main():
 					time.sleep(1)
 			
 			if accept:
-				if(pyautogui.locateOnScreen('pictures/accept.png', region=centerRegion, grayscale=True, confidence=0.8) != None):
-					click(pyautogui.locateOnScreen('pictures/accept.png', region=centerRegion, grayscale=True, confidence=0.8).left, pyautogui.locateOnScreen('pictures/accept.png', region=centerRegion, grayscale=True, confidence=0.8).top)
+				if(pyautogui.locateOnScreen('images/accept.png', region=centerRegion, grayscale=True, confidence=0.8) != None):
+					click(pyautogui.locateOnScreen('images/accept.png', region=centerRegion, grayscale=True, confidence=0.8).left, pyautogui.locateOnScreen('images/accept.png', region=centerRegion, grayscale=True, confidence=0.8).top)
 					accept = False
 					print("\nMatch found, [OFF] AutoAccept")
 
-main()
+
+if __name__ == '__main__':
+	main()
