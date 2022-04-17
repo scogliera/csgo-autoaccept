@@ -19,8 +19,11 @@
 <br><br><br>
 
 ## Usage
-- After opening up the script, **wait for it to open up CS:GO in the taskbar**
-- When it opens up CS:GO, it will get your resolution and beep twice once successful (Takes about 5 seconds). **DO NOT minimize CS before you hear the beeps**
+- **Make sure that CS:GO is already running before starting the script!**
+- After starting the script, **wait for it to open up CS:GO in the taskbar**
+- When it opens up CS:GO, it will try to find your resolution (if you're using fullscreen)
+1. One beep => Didn't detect a custom resolution
+2. Two beeps => Detected a custom resolution
 - At this point, everything is set up and ready for use
 - See the console window for binds
 <p align="center">
