@@ -24,6 +24,7 @@ def findCSGO():
 				(topTaskbar, (floor(pyautogui.size().width/2), 1)), 
 				(rightTaskbar, (pyautogui.size().width-1, floor(pyautogui.size().height/2))))
 
+	#Looping through each possible taskbar location
 	for taskbar, xy in taskbars:
 		try:
 			#Placing the cursor on the part of the screen where taskbar should be to show it (if hidden)
@@ -41,6 +42,7 @@ def findCSGO():
 
 def acceptGame(fullscreen, centerRegion):
 	print(" > Searching for Accept Button...\n > Hold Left Arrow to stop searching\n\n")
+
 	while(True):
 		if keyboard.is_pressed('right') or keyboard.is_pressed('left'):
 			print("[Off] AutoAccept")
@@ -66,25 +68,28 @@ def main():
 		#Setting up variables to find out if user uses Exclusive Fullscreen or Windowed
 		resolution = pyautogui.size()
 		fullscreen = False
-	
+
 		#Setting up settings bools and areas for searching up images
 		enableKeybinds = True
 		centerRegion = (floor((resolution.width/2)/2), 0, floor(resolution.width/2), resolution.height)
 
 		#After opening up cs, checking resolution every 500ms to find out if cs runs on a custom resolution or native 
 		for i in range(10):
+			#Checks if the resolution on Desktop matches current resolution (If CS:GO changed monitor resolution)
 			if resolution != pyautogui.size():
 				resolution = pyautogui.size()
 				fullscreen = True
 				Beep(1000, 500)
 				Beep(1000, 500)
-				print(f"Fullscreen Resolution Found! {resolution.width}x{resolution.height}")
+				print(f"CS:GO Resolution Found! {resolution.width}x{resolution.height}")
 				break
 
+			#If it didn't detect a resolution change, use the Desktop resolution
 			if i == 9 and resolution == pyautogui.size():
-				print(f"Didn't find Fullscreen Resolution, using default {pyautogui.size().width}x{pyautogui.size().height}")
+				print(f"Monitor didn't change resolution, CS:GO is probably running in Windowed or resolution is the same as in Desktop!\nUsing the Desktop resolution {resolution.width}x{resolution.height}")
 				Beep(500, 500)
 			sleep(0.5)
+
 
 		print("\nBinds\n")
 		print(" > Up Arrow | Enables/Disables Keybinds Below")
@@ -94,6 +99,13 @@ def main():
 
 		while(True):
 			event = keyboard.read_event()
+			'''
+				Binds:
+					Up Arrow - Enables/Disables Keybinds
+					Left Arrow - Enables/Disables Autoaccept
+					Right Arrow - Stops script
+			'''
+			
 			if event.event_type == keyboard.KEY_DOWN and event.name == 'up':
 				if enableKeybinds:
 					enableKeybinds = False
@@ -109,6 +121,7 @@ def main():
 				elif event.event_type == keyboard.KEY_DOWN and event.name == 'left':
 					print("[On] AutoAccept")
 					Beep(800, 400)
+					#If game found, disable keybinds
 					if acceptGame(fullscreen, centerRegion):
 						enableKeybinds = False
 
