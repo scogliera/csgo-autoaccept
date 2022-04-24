@@ -16,14 +16,15 @@
 ## Notes
 * **You must have CS:GO running before starting the script**
 * If you're using the **Python Script instead of the Application**, you must have **Python 3 installed**
+* For the **automatic script setup (.bat)**, you must have **Python 3 installed in the default location** (**...\AppData\Local\Programs\Python**)
 <br><br><br>
 
 ## Usage
 - **Make sure that CS:GO is already running before starting the script!**
 - After starting the script, **wait for it to open up CS:GO in the taskbar**
-- When it opens up CS:GO, it will try to find your resolution (if you're using fullscreen)
-1. One beep => Didn't detect a custom resolution
-2. Two beeps => Detected a custom resolution
+- When it opens up CS:GO, it will try to find your resolution (if you're using fullscreen stretched)
+1. **One beep** => The monitor's resolution didn't change, **script will use your Desktop resolution**
+2. **Two beeps** => Fullscreen Stretched resolution detected, **script will use your in-game resolution**
 - At this point, everything is set up and ready for use
 - See the console window for binds
 <p align="center">
@@ -37,6 +38,12 @@
 > This is the best choice for **ease of instalation**.
 
 * Download the "**csgo-autoaccept-setup.exe**" file
+<p align="center">
+	<a href="https://github.com/scogliera/csgo-autoaccept/releases/download/v1.0.0/csgo-autoaccept-setup.exe">
+		<img alt="csgo-autoaccept-setup.exe Download - 56.4 MB" src="images/setup-download.png">
+	</a>
+</p>
+
 * Once you start the setup, **Windows Smartscreen will probably show a warning**, since Windows doesn't know who created the program
 * To continue, press **More info** and **Run Anyway**
 * In the setup, enter the folder you want the script to install into, and wait for the installation to finish
@@ -45,9 +52,22 @@
 
 ### Python Script
 > This is the best choice for **speed** and **reliability**.
-
 * To use the Python Script, download the "**csgo-autoaccept-script.zip**" file
+<p align="center">
+	<a href="https://github.com/scogliera/csgo-autoaccept/releases/download/v1.0.0/csgo-autoaccept-script.zip">
+		<img alt="csgo-autoaccept-script.zip Download - 6.9 KB" src="images/script-download.png">
+	</a>
+</p>
+
 * Extract the contents of the .zip file
+
+#### Automatic Installation (.bat)
+> To use the Automatic Installation method, **you must have Python 3 installed in the default location** (**...\AppData\Local\Programs\Python**)
+* Run the setup.bat file and wait until the command prompt disappears
+* **After that, you're set! Just run AutoAccept.bat whenever you want to start AutoAccept!**
+
+
+#### Manual Installation
 * Open up cmd in the **csgo-autoaccept-script** folder (An easy way to do so is by entering **cmd** in the address bar)
 
 <p align="center">
@@ -55,11 +75,12 @@
 </p>
 
 * Create a venv
-1. Locate your python installation folder. By default in: **C:\Users\user\AppData\Local\Programs\Python\Python310\python.exe**
-2. In the cmd window opened up earlier, type:
-```C:\Users\user\AppData\Local\Programs\Python\Python310\python.exe -m venv .venv```
+1. Locate your python installation folder. By default in: **C:\Users\user\AppData\Local\Programs\Python\Python3.x\python.exe**
+2. Copy the full address **ending with \python.exe**
+3. In the cmd window opened up earlier, type:
+```<full copied address> -m venv .venv```
 * Enter the venv by entering: 
 ```.venv\Scripts\activate.bat```
 * Download the required dependencies by entering: 
 ```pip install -r requirements.txt```
-* After that, you're set up! Start the bot by using the ```python bot.py``` command!
+* After that, you're set up! Close the command prompt and start the **AutoAccept.bat** file
