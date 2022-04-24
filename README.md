@@ -39,7 +39,7 @@
 
 * Download the "**csgo-autoaccept-setup.exe**" file
 <p align="center">
-	<a href="https://github.com/scogliera/csgo-autoaccept/releases/download/v1.0.0/csgo-autoaccept-setup.exe">
+	<a href="https://github.com/scogliera/csgo-autoaccept/releases/download/v1.1.0/csgo-autoaccept-setup.exe">
 		<img alt="csgo-autoaccept-setup.exe Download - 56.4 MB" src="images/setup-download.png">
 	</a>
 </p>
@@ -54,7 +54,7 @@
 > This is the best choice for **speed** and **reliability**.
 * To use the Python Script, download the "**csgo-autoaccept-script.zip**" file
 <p align="center">
-	<a href="https://github.com/scogliera/csgo-autoaccept/releases/download/v1.0.0/csgo-autoaccept-script.zip">
+	<a href="https://github.com/scogliera/csgo-autoaccept/releases/download/v1.1.0/csgo-autoaccept-script.zip">
 		<img alt="csgo-autoaccept-script.zip Download - 6.9 KB" src="images/script-download.png">
 	</a>
 </p>
